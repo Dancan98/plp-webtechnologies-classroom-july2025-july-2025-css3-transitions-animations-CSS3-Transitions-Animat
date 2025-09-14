@@ -1,0 +1,107 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+/* Part 1: CSS-only animations */
+
+/* Button with hover color transition */
+.btn-hover {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+
+  /* Transition for smooth color change */
+  transition: background-color 0.3s ease;
+}
+
+.btn-hover:hover {
+  background-color: #2ecc71;
+}
+
+/* Fade box with opacity transition */
+.fade-box {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #e67e22;
+  color: white;
+  width: 250px;
+  text-align: center;
+  border-radius: 8px;
+
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.fade-box:hover {
+  opacity: 0.3;
+}
+
+/* Slide box with continuous animation */
+.slide-box {
+  margin-top: 30px;
+  width: 200px;
+  padding: 15px;
+  background-color: #9b59b6;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+
+  animation: slideLeftRight 4s ease-in-out infinite;
+}
+
+/* Keyframes for sliding animation */
+@keyframes slideLeftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(150px);
+  }
+}
+
+/* Part 3: Animated box styling */
+
+#animatedBox {
+  width: 100px;
+  height: 100px;
+  background-color: #e74c3c;
+  margin: 20px auto;
+  border-radius: 10px;
+
+  /* Transition for background color and transform */
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+/* Keyframes for JS-triggered animation */
+@keyframes popAndSpin {
+  0% {
+    transform: scale(1) rotate(0deg);
+    background-color: #e74c3c;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    background-color: #f1c40f;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    background-color: #e74c3c;
+  }
+}
+
+/* Class added dynamically by JS to trigger animation */
+.animate {
+  animation: popAndSpin 2s forwards;
+}
